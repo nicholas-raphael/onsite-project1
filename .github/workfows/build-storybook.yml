@@ -1,5 +1,5 @@
-name: build-storybook
-run-name: ${{ github.actor }} builds storybook
+name: learn-github-actions
+run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 jobs:
   check-bats-version:
@@ -8,5 +8,6 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: '16.17.1'
-      - run: npm run build-storybook -- -o docs
+          node-version: '14'
+      - run: npm install -g bats
+      - run: bats -v
